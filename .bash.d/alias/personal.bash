@@ -9,7 +9,7 @@ alias pylint='pylint --extension-pkg-whitelist=numpy'
 # Git aliases
 alias gs='git status'  # Take precedence over ghostscript `gs` command.
 alias gb='git branch'
-alias gd='git diff'
+alias gd='git difftool'
 
 # Makes ghostscript callable.
 alias ghostscript='/usr/bin/gs'

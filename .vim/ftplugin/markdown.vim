@@ -8,8 +8,8 @@ augroup highlight_extra_whitespace
 	autocmd!
 augroup END
 
-" Show trailing whitespace instead as dots.
-setlocal listchars=trail:.
+" Show trailing whitespace as underscores.
+setlocal listchars=trail:_
 setlocal list
 
 " Turn off trailing whitespace highlighting in insert mode.

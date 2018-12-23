@@ -12,25 +12,13 @@ augroup END
 setlocal listchars=trail:.
 setlocal list
 
-" Functions to display/not display list characters
-function! SetListIfMarkdown()
-	if (&filetype ==# 'markdown')
-		setlocal list
-	endif
-endfunction
-
-function! SetNoListIfMarkdown()
-	if (&filetype ==# 'markdown')
-		setlocal nolist
-	endif
-endfunction
-
 " Turn off trailing whitespace highlighting in insert mode.
-" This doesn't quite work because it activates for all files. Why?
+" Some intricacies about buffer-local autocommands in:
+" https://vi.stackexchange.com/questions/8056
 augroup list_trailing_whitespace
-	autocmd!
-	autocmd InsertEnter * :call SetNoListIfMarkdown()
-	autocmd InsertLeave * :call SetListIfMarkdown()
+	autocmd! * <buffer>
+	autocmd InsertEnter <buffer> :setlocal nolist
+	autocmd InsertLeave <buffer> :setlocal list
 augroup END
 
 " Turn on spelling for markdown files.

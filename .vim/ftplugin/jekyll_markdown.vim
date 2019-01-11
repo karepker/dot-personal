@@ -1,2 +1,4 @@
 " Start with the whole markdown configuration.
 source <sfile>:h/markdown.vim
+
+nnoremap <buffer> <localleader>a :call jekyll_markdown#Autotag()<CR>

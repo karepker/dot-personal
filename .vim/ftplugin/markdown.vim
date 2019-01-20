@@ -12,6 +12,9 @@ augroup END
 setlocal listchars=trail:_
 setlocal list
 
+" Formatting for bullets.
+setlocal comments=fb:*,fb:-,fb:+,n:>,se:```
+
 " Turn off trailing whitespace highlighting in insert mode.
 " Some intricacies about buffer-local autocommands in:
 " https://vi.stackexchange.com/questions/8056

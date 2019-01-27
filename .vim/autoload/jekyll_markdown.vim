@@ -5,6 +5,14 @@ function! jekyll_markdown#Autotag()
 	!cd "$(git rev-parse --show-toplevel)" && bundler exec jekyll autotag --file "%:p"
 endfunction
 
+" Copies current file from my personal logs site to my website directory via a
+" script.
+function! jekyll_markdown#PublishNote()
+	" Yeah, this only works if the jekyll repo is controlled by git, but it's
+	" better than hard-coding two parent directories.
+	!"$(git rev-parse --show-toplevel)/_util/notes_transfer.sh" "%:p"
+endfunction
+
 " Creates a YAML header for the note with the title if possible.
 function! jekyll_markdown#GetHeader()
 	" :t gets tail,

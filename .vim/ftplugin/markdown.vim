@@ -26,3 +26,6 @@ augroup END
 
 " Turn on spelling for markdown files.
 setlocal spell
+
+" Common abbreviations for typos.
+iabbrev <buffer> work_directory work_director

@@ -15,6 +15,10 @@ setlocal list
 " Formatting for bullets.
 setlocal comments=fb:*,fb:-,fb:+,n:>,se:```
 
+" Makes hitting <CR> after typing the text for the bullet not add extra
+" whitespace.
+setlocal noautoindent
+
 " Turn off trailing whitespace highlighting in insert mode.
 " Some intricacies about buffer-local autocommands in:
 " https://vi.stackexchange.com/questions/8056

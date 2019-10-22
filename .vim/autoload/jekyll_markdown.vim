@@ -19,6 +19,7 @@ function! jekyll_markdown#GetHeader()
 	" :r gets root,
 	" :s command strips date prefix,
 	" :gs command substitutes space for hyphen.
+	" TODO: Dedupe with logic in UltiSnips snippet.
 	let stripped_title = expand('%:t:r:s?\d\d\d\d-\d\d-\d\d-??:gs?-? ?')
 	" Reminder, single quote does not allow escape characters.
 	if empty(stripped_title)

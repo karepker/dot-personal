@@ -20,10 +20,10 @@ function! jekyll_markdown#GetHeader()
 	" :s command strips date prefix,
 	" :gs command substitutes space for hyphen.
 	" TODO: Dedupe with logic in UltiSnips snippet.
-	let stripped_title = expand('%:t:r:s?\d\d\d\d-\d\d-\d\d-??:gs?-? ?')
+	let l:stripped_title = expand('%:t:r:s?\d\d\d\d-\d\d-\d\d-??:gs?-? ?')
 	" Reminder, single quote does not allow escape characters.
-	if empty(stripped_title)
+	if empty(l:stripped_title)
 		return "---\n---\n\n"
 	endif
-	return "---\ntitle: _" . stripped_title . "_\n---\n\n"
+	return "---\ntitle: _" . l:stripped_title . "_\n---\n\n"
 endfunction

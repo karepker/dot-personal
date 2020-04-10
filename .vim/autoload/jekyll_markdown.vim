@@ -8,9 +8,9 @@ endfunction
 " Copies current file from my personal logs site to my website directory via a
 " script.
 function! jekyll_markdown#PublishNote()
-	" Yeah, this only works if the jekyll repo is controlled by git, but it's
-	" better than hard-coding two parent directories.
-	!"$(git rev-parse --show-toplevel)/_util/notes_transfer.sh" "%:p"
+	let l:notes_path = '~/link/personal/webzone/notes/_posts/' . expand('%:t')
+	let l:script_path = '~/link/log/_util/conversion/transfer_notes/transfer_notes.pl'
+	execute '!perl ' . l:script_path . ' < %:p > ' . l:notes_path
 endfunction
 
 " Creates a YAML header for the note with the title if possible.

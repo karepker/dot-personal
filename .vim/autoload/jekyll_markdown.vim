@@ -22,7 +22,9 @@ function! jekyll_markdown#GetHeader()
 	" TODO: Dedupe with logic in UltiSnips snippet.
 	let l:stripped_title = expand('%:t:r:s?\d\d\d\d-\d\d-\d\d-??:gs?-? ?')
 	" Reminder, single quote does not allow escape characters.
-	if empty(l:stripped_title)
+	" 'entry' is a placeholder title that I use because Jekyll doesn't like
+	" empty titles.
+	if empty(l:stripped_title) || l:stripped_title == "entry"
 		return "---\n---\n\n"
 	endif
 	return "---\ntitle: _" . l:stripped_title . "_\n---\n\n"

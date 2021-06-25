@@ -7,3 +7,6 @@ source ${HOME}/.config/zsh/pyenv.zsh
 
 # B2.
 source ${HOME}/.config/zsh/b2.zsh
+
+# Bundler.
+source ${HOME}/.config/zsh/bundler.zsh

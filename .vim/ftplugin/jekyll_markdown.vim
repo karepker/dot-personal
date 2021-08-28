@@ -3,6 +3,7 @@ source <sfile>:h/markdown.vim
 
 nnoremap <buffer> <localleader>a :call jekyll_markdown#Autotag()<CR>
 nnoremap <buffer> <localleader>p :call jekyll_markdown#PublishNote()<CR>
+nnoremap <buffer> <localleader>w :call jekyll_markdown#ToggleWrap()<CR>
 
 " Convenience abbreviations.
 iabbrev <buffer> [TOC] <div class="post-toc">

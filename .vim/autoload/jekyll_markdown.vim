@@ -26,6 +26,13 @@ function! jekyll_markdown#ToggleWrap()
 	setlocal linebreak!
 endfunction
 
+" Eats trailing spaces.
+" Inspired by a `:help abbreviation`.
+function! jekyll_markdown#RemoveTrailingSpace()
+	let last_typed_char = nr2char(getchar(0))
+	return (last_typed_char =~ '\s') ? '' : last_typed_char
+endfunction
+
 " Creates a YAML header for the note with the title if possible.
 function! jekyll_markdown#GetHeader()
 	" :t gets tail,

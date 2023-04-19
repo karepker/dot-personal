@@ -3,7 +3,7 @@
 
 # Only prepare rbenv if rbenv is actually installed.
 # Inspired by https://stackoverflow.com/a/677212.
-if ! command -v rbenv &> /dev/null ; then
+if command -v rbenv &> /dev/null ; then
 	# Required by rbenv.
 	eval "$(rbenv init -)"
 fi

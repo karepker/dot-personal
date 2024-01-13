@@ -1,6 +1,7 @@
-" This only detects Jekyll posts. Jekyll pages do not necessarily have to be in
-" a _posts/ directory.
+" This only detects Jekyll posts and drafts. Jekyll pages do not necessarily
+" have to be in a _posts/ directory.
 autocmd BufRead,BufNewFile */_posts/*.md set filetype=jekyll_markdown
+autocmd BufRead,BufNewFile */_drafts/*.md set filetype=jekyll_markdown
 
 " Inserts YAML header:
 "
@@ -16,3 +17,4 @@ autocmd BufRead,BufNewFile */_posts/*.md set filetype=jekyll_markdown
 " Maybe this should not be in ftdetect/, but it makes sense to put it here for
 " now so I can keep the file patterns in sync.
 autocmd BufNewFile */_posts/*.md 0put =jekyll_markdown#GetHeader()|$
+autocmd BufNewFile */_drafts/*.md 0put =jekyll_markdown#GetHeader()|$

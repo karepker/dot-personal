@@ -6,19 +6,6 @@ function! jekyll_markdown#PublishNote()
 	execute '!perl ' . l:script_path . ' < %:p > ' . l:notes_path
 endfunction
 
-" Toggles between hard line breaks and soft line breaks.
-function! jekyll_markdown#ToggleWrap()
-	" Save the value of textwidth to a buffer-local variable if it is set.
-	if !exists('b:hard_break_textwidth')
-		let b:hard_break_textwidth = &textwidth
-		setlocal textwidth=0
-	else
-		let &l:textwidth = b:hard_break_textwidth
-		unlet b:hard_break_textwidth
-	endif
-	setlocal linebreak!
-endfunction
-
 " Eats trailing spaces.
 " Inspired by a `:help abbreviation`.
 function! jekyll_markdown#RemoveTrailingSpace()

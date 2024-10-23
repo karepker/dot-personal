@@ -33,3 +33,6 @@ setlocal spell
 iabbrev <buffer> h4 ####
 iabbrev <buffer> h5 #####
 iabbrev <buffer> h6 ######
+
+" Toggle between wrapped text and text with hard line breaks.
+nnoremap <buffer> <localleader>w :call markdown#ToggleWrap()<CR>

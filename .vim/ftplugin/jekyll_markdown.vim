@@ -3,7 +3,7 @@ source <sfile>:h/markdown.vim
 
 " Calls autotag on the current file and replaces the buffer's contents with the
 " output. See :h range! for details.
-nnoremap <buffer> <localleader>a :%!cd "$(git rev-parse --show-toplevel)" && python _util/autotag/autotag.py "%:p" "autotags.json"<CR>
+nnoremap <buffer> <localleader>a :%!cd "$(git rev-parse --show-toplevel)" && python _util/tag/autotag.py "%:p" "autotags.json"<CR>
 nnoremap <buffer> <localleader>p :call jekyll_markdown#PublishNote()<CR>
 
 " Convenience abbreviations.

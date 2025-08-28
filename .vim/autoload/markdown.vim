@@ -15,8 +15,9 @@ function! markdown#ToggleWrap()
 			" Clean up the variable to reset the state.
 			unlet b:hard_break_textwidth
 		else
-			" No saved value exists, so use a default of 80.
-			let &l:textwidth = 80
+			" Prefer the global textwidth as a fallback. If that's not set, just
+			" use 80.
+			let &l:textwidth = (&g:textwidth > 0) ? &g:textwidth : 80
 		endif
 	endif
 	" Always toggle the visual linebreak option.

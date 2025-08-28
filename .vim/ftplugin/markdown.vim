@@ -3,14 +3,21 @@ setlocal softtabstop=2
 setlocal tabstop=2
 setlocal shiftwidth=2
 
+" No hard text wrapping by default.
+setlocal textwidth=0
+setlocal linebreak
+" Soft wrap in a more aesthetically pleasing way (line up with text and an
+" additional two spaces to get list text to line up).
+setlocal breakindent
+setlocal breakindentopt=list:2
+" `list` above is informed by `formatlistpat` below, where we match ordered |
+" unordered lists.
+" vim escaping is crazy: \ and | need to be escaped with \.
+setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\|^\\s*[-*+]\\s\\+
+
 " Show trailing whitespace as underscores.
 setlocal listchars=trail:_
 setlocal list
-
-" Formatting for bullets.
-setlocal comments=fb:*,fb:-,fb:+,n:>,se:```
-
-setlocal autoindent " Or this happens https://vi.stackexchange.com/q/9753
 
 " Turn on spelling for markdown files.
 setlocal spell

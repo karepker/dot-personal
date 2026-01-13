@@ -28,4 +28,4 @@ iabbrev <buffer> h5 #####
 iabbrev <buffer> h6 ######
 
 " Toggle between wrapped text and text with hard line breaks.
-nnoremap <buffer> <localleader>w :call markdown#ToggleWrap()<CR>
+nnoremap <buffer> <localleader>w :call wrap#ToggleWrap()<CR>

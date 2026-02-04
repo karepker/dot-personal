@@ -1,1 +1,0 @@
-call wrap#SetSoftWrap()
